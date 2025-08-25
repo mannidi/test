@@ -160,5 +160,14 @@ output application/json
 	</flow>
 	<flow name="uw-exp-apiFlow1" doc:id="cdca14c3-1f9f-456d-9b80-5a993957a525" >
 		<sap:document-listener doc:name="Document listener" doc:id="3d63860e-aee3-4431-8b4e-eb4d8e5f4033" />
+		<ee:transform doc:name="Transform Message" doc:id="9daea06c-4650-40d3-8a97-409e1b8da82e" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
 	</flow>
 </mule>
