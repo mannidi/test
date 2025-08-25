@@ -1,0 +1,5 @@
+common-api:
+   host : "localhost"
+   port: "8081"
+   dbpostpath: "/insert-into-db"
+  

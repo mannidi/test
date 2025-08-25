@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="51c299d5-bb9b-4e1e-a0d4-ee5737875b7b" >
+		<http:request-connection host="${common-api.host}" port="${common-api.port}" />
+	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="59acea81-9116-43e1-9722-4b52c476e553" file="${env}.yaml" />
+	<flow name="uw-exp-implFlow" doc:id="1a7952ed-48f3-443d-a831-4f7f62c3b3fc" >
+		<async doc:name="Async" doc:id="162f0782-fb10-49da-a6b6-e5f33c5f55eb" >
+			<http:request method="POST" doc:name="Request" doc:id="34a26dee-506a-433b-b4dc-ba97e8639e98" config-ref="HTTP_Request_configuration" path="${common-api.dbpostpath}"/>
+		</async>
+	</flow>
+</mule>
