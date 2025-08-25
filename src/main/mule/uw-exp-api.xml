@@ -160,5 +160,6 @@ output application/json
 	</flow>
 	<flow name="uw-exp-apiFlow1" doc:id="cdca14c3-1f9f-456d-9b80-5a993957a525" >
 		<sap:document-listener doc:name="Document listener" doc:id="3d63860e-aee3-4431-8b4e-eb4d8e5f4033" />
+		<logger level="INFO" doc:name="Logger" doc:id="5f230603-d38e-48ef-ae08-d314835e384a" />
 	</flow>
 </mule>
